@@ -1,0 +1,72 @@
+.header {
+  background-color: #f2f2f2;
+
+  &__container {
+    @extend %container;
+    padding: 13px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    color: $c-green;
+    font-size: 40px;
+    transition: transform 0.5s;
+
+    &--first-part {
+      font-weight: bold;
+    }
+
+    &--last-part {
+      margin-left: -4px;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__from {
+    font-size: 22px;
+    position: relative;
+    
+    &::before {
+      @extend %pseudoelement;
+      top: -2px;
+      left: -75px;
+      height: 30px;
+      width: 60px;
+      background: url("../images/usa.jpg") no-repeat center / contain;
+    }
+  }
+
+  &__buy-button {
+    @extend %primary-button;
+    height: 67px;
+    width: 220px;
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 1150px) {
+  .header {
+    &__container {
+      flex-direction: column;
+      align-items: center;
+      row-gap: 30px;
+    }
+
+    &__from {
+      margin-left: 100px;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .header {
+    &__from {
+      font-size: 16px;
+    }
+  }
+}

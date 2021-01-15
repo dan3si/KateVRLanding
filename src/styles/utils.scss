@@ -1,0 +1,81 @@
+$second-font: oswald, sans-serif;
+$c-green: #6e9982;
+$c-dark-green: #566c60;
+$c-orange: #f8aa1f;
+$c-dark-orange: #ce8a14;
+
+%container {
+  width: calc(100% - 40px);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+%pseudoelement {
+  content: "";
+  display: block;
+  position: absolute;
+}
+
+%primary-button {
+  text-transform: uppercase;
+  font-family: $second-font;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  background-color: $c-orange;
+
+  &:hover {
+    background-color: $c-dark-orange;
+  }
+
+  &::before {
+    @extend %pseudoelement;
+    background: linear-gradient(90deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.5));
+    height: 100%;
+    width: 50px;
+    top: 0;
+    left: -50%;
+    transform: skewX(-45deg);
+  }
+
+  &:hover::before {
+    left: 120%;
+    transition: 0.5s ease-in-out;
+  }
+}
+
+%secondary-button {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  color: #fff;
+  text-transform: uppercase;
+  z-index: 1;
+  font-family: $second-font;
+  cursor: pointer;
+  transition: 1s ease-out;
+  background-color: $c-dark-green;
+
+  &:before {
+    @extend %pseudoelement;
+    z-index: -1;
+    top: -20px;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    width: 40px;
+    height: 40px;
+    background-color: $c-green;
+    border-radius: 50px;
+    transition: 0.5s ease-in-out;
+  }
+
+  &:hover {
+    &:before {
+      transform: scale(8.3);
+    }
+  }
+}
