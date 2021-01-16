@@ -235,7 +235,7 @@
         const invisibleElements = document.querySelectorAll('.invisible');
 
         invisibleElements.forEach(element => {
-          const elementInSight = element.getBoundingClientRect().y - window.innerHeight * 0.8 < 0;
+          const elementInSight = element.getBoundingClientRect().y - (window.innerHeight * 0.8) < 0;
 
           if (elementInSight) {
             element.classList.remove('invisible')
