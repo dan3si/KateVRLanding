@@ -7,6 +7,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    animation: appearance 1s;
   }
 
   &__logo {
@@ -68,5 +69,15 @@
     &__from {
       font-size: 16px;
     }
+  }
+}
+
+@keyframes appearance {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 }

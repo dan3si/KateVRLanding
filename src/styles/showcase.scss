@@ -212,6 +212,20 @@
       font-size: 26px;
     }
   }
+
+  &--left.invisible {
+    transform: translateX(-500px);
+    opacity: 0;
+  }
+
+  &--central.invisible {
+    opacity: 0;
+  }
+
+  &--right.invisible {
+    transform: translateX(500px);
+    opacity: 0;
+  }
 }
 
 @media (max-width: 400px) {

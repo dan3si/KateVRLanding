@@ -7,11 +7,13 @@
     justify-content: space-around;
     flex-wrap: wrap;
     gap: 50px;
+    transition: 1s;
   }
 
   &__group {
     width: 100%;
     max-width: 458px;
+    transition: 1s;
 
     &:not(:first-child) {
       margin-top: 63px;
@@ -70,6 +72,7 @@
     display: block;
     width: 100%;
     margin-top: 60px;
+    transition: 1s;
   }
 
   &__group--first {
@@ -94,5 +97,25 @@
         background-color: #8e8e8e;
       }
     }
+  }
+
+  &__group--first.invisible {
+    transform: translate(-500px, -100px);
+    opacity: 0;
+  }
+
+  &__group--second.invisible {
+    transform: translate(-500px, 100px);
+    opacity: 0;
+  }
+
+  &__group--third.invisible {
+    transform: translate(500px, -100px);
+    opacity: 0;
+  }
+
+  &__supplement-facts.invisible {
+    transform: translate(500px, 100px);
+    opacity: 0;
   }
 }

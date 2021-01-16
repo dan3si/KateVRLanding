@@ -5,6 +5,7 @@
     display: flex;
     column-gap: 70px;
     align-items: flex-start;
+    animation: appearance 1s;
   }
 
   &__text-wrapper {
@@ -94,5 +95,15 @@
       height: 75px;
       max-width: 270px;
     }
+  }
+}
+
+@keyframes appearance {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 }
